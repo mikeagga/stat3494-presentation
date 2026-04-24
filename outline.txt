@@ -1,0 +1,311 @@
+Basically just want to retell the story of the article and add my commentary.
+
+Sections build upon each other: like we learn a bit about the basics of machine
+learning, and what is deep learning and what are learning algorithms. Then
+slowly build up to the innovations over time, until we get to modern day.
+	Each section basically starts from first principals and builds upon the
+	intuition naturally.
+
+In this class we already has a presentation on the transformer.
+We even looked at using chat gpt for data analysis.
+
+Technical overview of AI and ml up to 2015.
+Represents the state of AI and ML before the boom caused by transformers.
+
+Published in Nature: the most prestigious scientific journal
+
+70k citations.
+
+All got the 2018 Turing award for their work on deep learning.
+Considered the God fathers of Deep Learning
+
+Yann LeCun: Invented CNNs
+
+He developed a number of new machine learning methods, such as a biologically
+inspired model of image recognition called convolutional neural networks
+(LeNet), the "Optimal Brain Damage" regularization methods, and the
+Graph Transformer Networks method (similar to conditional random field), which
+he applied to handwriting recognition and Optical character recognition
+(OCR). The bank check recognition system that he helped develop was widely
+deployed by NCR and other companies.
+	This is mentioned in the paper.
+
+Yoshua Bengio: Word embeddings, RNNs
+most-cited computer scientist globally (by both total citations and by h-index)
+and the most-cited living scientist across all fields (by total citations)
+
+As of August 2024, he has the highest Discipline H-index (D-index, a measure of
+the research citations a scientist has received) of any computer scientist.[28]
+Thanks to a 2019 article on a novel RNN architecture, Bengio has an Erdős number
+of 3
+
+Bengio et al. introduced the neural probabilistic language model, which learned
+distributed representations (word embeddings) for words to overcome the "curse
+of dimensionality" in natural language processing.
+
+
+
+Geoffrey Hinton: Backpropagation, Boltzmann machines
+
+Hinton was co-author of a highly cited paper published in 1986 that popularised
+the backpropagation algorithm for training multi-layer neural networks,[13]
+although they were not the first to propose the approach
+	- This is mentioned in this paper: training deep networks with back
+		propagation.
+
+He was also awarded, along with John Hopfield, the 2024 Nobel Prize in Physics
+for "foundational discoveries and inventions that enable machine learning with
+artificial neural networks"
+
+Boltzmann machines, type of NN architecture 1985, by Hinton and friends. 
+
+Basically 3 of the top deep learning and computer science researchers of the
+time compile all of the current innovations and brief historical context that
+leads up to modern day.
+
+Literally everything they say is backed up by like a nobel prizes worth of
+understanding. Makes the meaning so deep and intriguing.
+
+History of ai.
+
+1950s-60s: AI hype cycle 1
+1970s:     AI Winter 1 - symbolic AI hits limits
+1980s:     Expert systems hype cycle 2
+1990s:     AI Winter 2 - expert systems fail
+1997: 		 SLTM invented
+2000s:     ML revival - SVMs, kernel methods dominate
+2012: 		 lexNet, a deep CNN entered the ImageNet competition
+					 Crushed every other approach by a massive margin
+
+So what was happening before this paper
+
+Then what happened after?
+
+Quantify the impact.
+
+Mention how well informed these guys are:
+Talk about how the paper holds up, how correct they were in their analysis of
+the future.
+	
+	The paper is sort of building hype through talking about deep learning and
+	what its done so far. CNN and RNN.
+
+	Also includes philosophical sort of justifications from first principles. 
+	
+	Predicts: Deep learning for natural language processing.
+		They think that this could work better because the training is largely unsupervised.
+			Very correct.
+
+		This leads them to talk about: What exactly do we need for this natural
+		language processing?
+			They say that we probably just need better memory architecture.
+				"Attention is all you need" releases in 2017, two years after.
+
+
+Paper starts talking about back propagation:
+
+The goal is to replace hand engineered features with trainable multilayer
+networks. Possible with stochastic gradient decent as long as the activation
+functions are relatively smooth. discovered by multiple groups in the 70's and
+80's. One is Geoffrey Hinton's (author's) group.
+
+Then I'll start an explanation of back prop through a simple feed forward NN.
+	Relu is normally the fastest, thats what they say.
+	Will write code examples for this and put images in my presentation.
+
+In the late 1990's they thought that back prop and neural nets were bad:
+"Thought learning useful, multistage, feature extractors with little prior
+knowledge was infeasible"
+
+Thought that back prop would find poor local minima.
+	They refute this here: 
+
+	"Recent theoretical and empirical results strongly suggest that local minima
+	are not a serious issue in general. Instead, the landscape is packed with a
+	combinatorially large number of saddle points where the gradient is zero, and
+	the surface curves up in most dimensions and curves down in the remainder"
+
+		They are sort of just breaking down potential readers doubts about AI. Maybe
+		for those researchers that could have heard that deep learning would never
+		work in the 90's and just never updated their knowledge.
+		
+
+They then talk about a breakthrough in 2006. They don't even mention that it was
+them who did it. Hinton and LeCun were part of the CIFAR group mentioned.
+	Their breakthrough was they built a model that could detect features without
+	labeled data. Cleverly worked around many limitations of the time: not many
+	good datasets that were labeled clearly or they were small. Not great
+	computing power. Training was difficult since no relu and poor pretraining
+	randomization, no dropout. This would lead to gradient minimization.
+		This proved that deep learning was worth pursuing and could be useful.
+		
+	This sort of became the first commercial breakthrough: speech recognition.
+		compounded with better gpus 2009. being deployed in android phones by 2012.
+			Back in the day GPU's were mostly just used for graphics particularly for
+			gamers.
+			Once innoviations in training were made there was no need for pretraining
+			unless the dataset was small.
+				
+	This was completely overshadowed by CNN's. 
+
+CNN's:
+
+Explain what CNN's are used for and what they are good at.
+
+One of the authors helped invent them
+	Yann LeCun
+
+Basically build CNN and show weights and stuff and explain how they work and how
+they are trained. Just build the intuition mostly. 
+
+"When ConvNet models and monkeys are shown the same picture, the activations of
+high-level units in the ConvNet explains half of the variance of random sets of
+160 neurons in the monkey's inferotemporal cortex"
+	Building hype. Like: look, this mirrors the real world so its good.
+
+Basically just condense and include all of this:
+
+"There have been numerous applications of convolutional networks going back to
+the early 1990s, starting with time-delay neural networks for speech
+recognition and document reading. The document reading system used a ConvNet
+trained jointly with a probabilistic model that implemented language
+constraints. By the late 1990s this system was reading over 10% of all the
+cheques in the United States. A number of ConvNet-based optical character
+recognition and handwriting recognition systems were later deployed by
+Microsoft. ConvNets were also experimented with in the early 1990s for object
+detection in natural images, including faces and hands, and for face
+recognition"
+	Building more hype. Also LeCun was a part of this.
+
+
+Image understanding:
+
+"Companies such as Mobileye and NVIDIA are using such ConvNet-based methods in
+their upcoming vision systems for cars."
+	Building more hype, sort of mentioning that NVIDIA is invested in making chips
+	that aid deep learning.
+	Also self driving cars like TESTLA
+		Could have made a bunch of money if you bought the hype in this paper and
+		invested.
+			Shows amazing domain understanding.
+				Also the hype is warranted, they want you to buy it bc they know that
+				its going to work out and that its going to be big. 
+
+Despite these successes, ConvNets were largely forsaken by the mainstream
+computer-vision and machine-learning communities until the ImageNet competition
+in 2012	
+
+"they achieved spectacular results, almost halving the error rates of the best
+competing approaches"
+
+"This success came from the efficient use of GPUs, ReLUs, a new regularization
+technique called dropout62, and techniques to generate more training examples by
+deforming the existing ones."
+
+Language processing:
+Sort of theoretical justification for deep learning:
+
+Two exponential advantages:
+1. With n binary features you get 2^n possible combinations So 30 neurons could
+represent over 1 billion different concepts
+
+2. Each layer multiplies the expressive power exponentially
+
+This is demonstrated by word processing:
+"Each word in the context is presented to the network as a one-of-N vector, that
+is, one component has a value of 1 and the rest are 0"
+one hot encoding
+
+First layer creates different patter of activations per word vector.
+Other layers convert input vector to output vector.
+	Foreshadows Word2Vec and modern embedding
+
+Hinton and Bengio have done a lot of work with this.
+
+Simple feed forward network, given like 5 words and told to predict the next.
+
+Small, clean, structured symbol datasets (like Hinton's 1986 family trees experiment) → works well
+Large, messy, real-world text corpora → also works well, surprisingly
+
+This must have been contrary to the common opinion of the time.
+	This is partially why they are so confident that language is well modeled.
+
+When trained to predict the next word in a news story, for example, the learned
+word vectors for Tuesday and Wednesday are very similar, as are the word vectors
+for Sweden and Norway
+
+They keep reiterating like: this is crazy, we didn't program it to learn words
+like this, it just did it, isn't that crazy.
+
+Getting philosophical again.
+Famous distinction in cognitive science:
+Fast intuitive inference. vs logical reasoning.
+Deep learning is the intuitive reasoning.
+	This is also hyping up deep learning.
+
+Old language processing:
+"based on counting frequencies of occurrences of short symbol sequences of
+length up to N (called N-grams). The number of possible N-grams is on the order
+of VN, where V is the vocabulary size"
+
+This is just pretty bad and slow tbh.
+
+Should just build a simple RNN, show graph of structure, exaplain the problems.
+	Show LSTM.
+
+Explain that they could translate english to french using RNN.
+RNN implicitly learns the rules of the langauge to get some sort of semantic
+translation based on meaning rather than naive word translation.
+
+Giving a lot of intuition about the translation of words into vectors
+representing meaning.
+
+They seem to be super bullish about this, today it seems just normal because of
+how much we hear about and use ai. But at the time, it was indeed very exciting
+and interesting.
+	Authors to be like c'mon guys why aren't you as excited as we are.
+
+
+Talk about how lstm works a bit, maybe give diagram, and explain it a bit.
+	Just want to give some intuition.
+
+They build the intuition that the biggest bottle neck is the stateless nature of
+neural networks. Memory is sort of inherently stateful, and this contradicts
+NN's.
+
+They talk about the basics of neural turing machines which give like a tape like
+memory to RNN's.
+Google deep mind 2014
+Basically a differnentiable version of a Turnign machine that uses attention
+	Like can read and write to memory depending on some attention variable.
+
+
+Future of deep learning: Now pretty much.
+
+They are bullish on unsupervised learning.
+
+"Human vision is an active process that sequentially samples the optic array in
+an intelligent, task-specific way using a small, high-resolution fovea with a
+large, low-resolution surround"
+
+CNN + RNN
+
+- They like reinforcement learning for this to simulate how humans learn
+	probably. Like playing a video game.
+		- deep mind ai does this very very well. They were very correct about this.
+
+
+Natural language understanding:
+"We expect systems that use RNNs to understand sentences or whole documents will
+become much better when they learn strategies for selectively attending to one
+part at a time"
+
+"Ultimately, major progress in artificial intelligence will come about through
+systems that combine representation learning with complex reasoning. Although
+deep learning and simple reasoning have been used for speech and handwriting
+recognition for a long time, new paradigms are needed to replace rule-based
+manipulation of symbolic expressions by operations on large vectors"
+
+Largely unsolved still but making progress.
+
+

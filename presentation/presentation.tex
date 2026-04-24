@@ -1,0 +1,123 @@
+\documentclass[10pt]{beamer}
+
+% Theme and colors
+\usetheme{Madrid} % Choose your favorite theme
+\usecolortheme{beaver}
+
+% Packages
+\usepackage{graphicx} % For including images
+\usepackage{booktabs} % For tables
+\usepackage{amsmath} % For mathematical expressions
+\usepackage{natbib} % For references
+
+% Title information
+\title{Introduction to Statistics}
+\subtitle{An Example Presentation}
+\author{Your Name}
+\institute{Your Institution}
+\date{\today}
+
+% Begin document
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Outline slide
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Section: Introduction
+\section{Introduction}
+
+\begin{frame}{What is Statistics?}
+    \begin{itemize}
+        \item Statistics is the science of collecting, organizing, analyzing, and interpreting data.
+        \item Key areas:
+        \begin{itemize}
+            \item Descriptive statistics: Summarizing data.
+            \item Inferential statistics: Making predictions and decisions.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Section: Mathematical Expression
+\section{Mathematical Expression}
+
+\begin{frame}{Mathematical Expression}
+    Let's write a simple equation:
+    $$
+    \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i
+    $$
+    where:
+    \begin{itemize}
+        \item $ \bar{x} $: Sample mean.
+        \item $ n $: Number of observations.
+        \item $ x_i $: Individual data points.
+    \end{itemize}
+\end{frame}
+
+% Section: Including Figures
+\section{Including Figures}
+
+\begin{frame}{Including a Figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures/lasso}
+        \caption{Geometry of Lasso.}
+    \end{figure}
+\end{frame}
+
+% Section: Creating Tables
+\section{Creating Tables}
+
+\begin{frame}{Creating a Table}
+    \begin{table}
+        \centering
+        \begin{tabular}{@{}lcc@{}}
+            \toprule
+            \textbf{Category} & \textbf{Count} & \textbf{Percentage} \\ \midrule
+            Category A        & 50             & 25\%                \\
+            Category B        & 100            & 50\%                \\
+            Category C        & 50             & 25\%                \\ \bottomrule
+        \end{tabular}
+        \caption{An example table.}
+    \end{table}
+\end{frame}
+
+
+\section{How to Cite References}
+
+\begin{frame}{Cite References}
+
+  \begin{itemize}
+  \item It is important to cite references in your presentation to credit other's work.
+  \item You can download and create bibtex entry in the file \texttt{references.bib}.
+  \item You may then reference these papers in your writing. For example, this presentation is based on \citet{tukey1962} and \citet{box1976}.
+  \end{itemize}
+
+\end{frame}
+
+
+
+% Section: References
+\section{References}
+
+\begin{frame}{References}
+
+  \bibliographystyle{jasa}
+  \bibliography{references}{}
+  
+\end{frame}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
