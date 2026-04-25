@@ -1,0 +1,244 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION 6: Language Processing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Language Processing}
+
+% The Limits of N-grams
+\begin{frame}{The Old Approach: N-grams}
+    \textbf{How NLP worked before deep learning:}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Count frequencies of word sequences of length $N$
+        \item Predict next word by frequency alone
+        \item Possible sequences scale as $V^N$ where $V$ = vocabulary size
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{The problems:}
+    \begin{itemize}
+        \item Hopelessly unscalable
+        \item No semantic understanding
+        \item ``fast car'' and ``quick car'' are completely unrelated
+        \item Fundamentally counting, not understanding
+    \end{itemize}
+\end{frame}
+
+% Word Embeddings - The Insight
+\begin{frame}{Word Embeddings: The Insight}
+    \textbf{Bengio et al.'s approach:}
+    
+    \vspace{1em}
+    \begin{enumerate}
+        \item Represent each word as \textbf{one-hot vector}
+        
+        (one component = 1, rest = 0)
+        
+        \item First layer learns to map these into \textbf{dense embeddings}
+        \item Semantically similar words end up geometrically close
+    \end{enumerate}
+    
+    \vspace{1em}
+    % TODO: Add embedding space visualization
+    
+    \textbf{This structure was not programmed — it emerged:}
+    \begin{quote}
+        \small``When trained to predict the next word in a news story, the learned word vectors for Tuesday and Wednesday are very similar, as are the word vectors for Sweden and Norway.''
+    \end{quote}
+\end{frame}
+
+% Word Embeddings - Why It's Surprising
+\begin{frame}{Word Embeddings: Why It's Surprising}
+    \textbf{It works on:}
+    \begin{itemize}
+        \item Small, clean datasets (Hinton's 1986 family trees)
+        \item Large, messy real-world corpora
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{This was not the expected result at the time}
+    
+    \vspace{1em}
+    \textbf{Foreshadows:}
+    \begin{itemize}
+        \item Word2Vec (2013)
+        \item GloVe (2014)
+        \item Every modern language model embedding
+    \end{itemize}
+\end{frame}
+
+% RNNs - The Problem
+\begin{frame}{Recurrent Neural Networks: The Problem}
+    \textbf{Feedforward networks for language:}
+    \begin{itemize}
+        \item Stateless — each input processed independently
+        \item No memory of prior context
+        \item Cannot model sequence, grammar, long-range dependencies
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{Language is inherently sequential}
+    
+    \vspace{0.5em}
+    ``The cat sat on the \_\_\_'' requires knowing what came before
+\end{frame}
+
+% RNN Structure
+\begin{frame}{RNN: Unrolled Structure}
+    % TODO: Add RNN unrolled diagram showing:
+    % - Input sequence x₁, x₂, x₃, ...
+    % - Hidden states h₁, h₂, h₃, ...
+    % - Outputs y₁, y₂, y₃, ...
+    % - Arrows showing h_{t-1} → h_t connections
+    % - IMPORTANT: Label that weights W_hh, W_xh, W_hy are SHARED across all time steps
+    
+    \begin{center}
+        \textit{[Diagram: RNN unrolled through time]}
+    \end{center}
+    
+    \vspace{1em}
+    \textbf{Key insight:} The \textbf{same weights} are used at every time step
+    $$h_t = \sigma(W_{hh} h_{t-1} + W_{xh} x_t + b)$$
+    
+    \vspace{0.5em}
+    This weight sharing is both the power and the problem...
+\end{frame}
+
+% RNNs - The Solution
+\begin{frame}{RNNs: What They Enable}
+    \textbf{Key idea:} Pass a hidden state forward through the sequence
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Network retains implicit memory of previous inputs
+        \item Enables sentence-level context
+        \item Sequence-to-sequence tasks become possible
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{Example: Machine translation}
+    \begin{itemize}
+        \item Translate English → French
+        \item Learns implicit grammatical and semantic structure
+        \item Not word-by-word lookup
+    \end{itemize}
+\end{frame}
+
+% The Vanishing Gradient Problem
+\begin{frame}{The Vanishing Gradient Problem}
+    \textbf{Backpropagating through time:}
+    
+    \vspace{0.5em}
+    $$\frac{\partial L}{\partial h_1} = \frac{\partial L}{\partial h_T} \cdot \prod_{t=2}^{T} \frac{\partial h_t}{\partial h_{t-1}}$$
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Each $\frac{\partial h_t}{\partial h_{t-1}}$ involves $W_{hh}$ and $\sigma'$
+        \item \textbf{Same weights multiplied $T$ times}
+        \item If $\|W_{hh}\| < 1$: gradients \textbf{vanish} exponentially
+        \item If $\|W_{hh}\| > 1$: gradients \textbf{explode}
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{Result:} Long-range dependencies cannot be learned
+    
+    \vspace{0.5em}
+    \small\textit{``The cat, which sat on the mat that belonged to my neighbor, \_\_\_''}
+\end{frame}
+
+% LSTM Structure
+\begin{frame}{LSTM: Structure}
+    \textbf{Hochreiter \& Schmidhuber, 1997}
+    
+    % TODO: Add LSTM cell diagram showing:
+    % - Cell state C_t (the "conveyor belt" running through)
+    % - Forget gate f_t
+    % - Input gate i_t  
+    % - Output gate o_t
+    % - Candidate values C̃_t
+    % - How gates control information flow
+    
+    \begin{center}
+        \textit{[Diagram: LSTM cell with gates labeled]}
+    \end{center}
+    
+    \vspace{1em}
+    \textbf{Key innovation:} Separate \textbf{cell state} $C_t$ from hidden state $h_t$
+    
+    Cell state flows through with minimal transformation — gradients preserved
+\end{frame}
+
+% LSTM Gates
+\begin{frame}{LSTM: The Gates}
+    \textbf{Forget gate:} What to discard from cell state
+    $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
+    
+    \vspace{0.5em}
+    \textbf{Input gate:} What new information to store
+    $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
+    
+    \vspace{0.5em}
+    \textbf{Output gate:} What to output
+    $$o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)$$
+    
+    \vspace{1em}
+    \textbf{Result:} Network learns what to remember and what to forget
+\end{frame}
+
+% LSTM Limitations
+\begin{frame}{LSTM: Better, But Not Perfect}
+    \textbf{LSTM solves vanishing gradients — mostly}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Gradients can flow across hundreds of time steps
+        \item Much better than vanilla RNN
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{But still has limitations:}
+    \begin{itemize}
+        \item Doesn't remember forever — gradients still decay, just slower
+        \item Sequential processing — can't parallelize across time steps
+        \item Fixed-size hidden state — information bottleneck
+    \end{itemize}
+    
+    \vspace{1em}
+    \textit{These limitations motivate the search for better architectures...}
+\end{frame}
+
+% The Memory Bottleneck
+\begin{frame}{The Memory Bottleneck}
+    \textbf{The remaining structural problem:}
+    \begin{itemize}
+        \item Even LSTM compresses everything into fixed-size hidden state
+        \item Real memory is addressable, structured, large
+        \item A single vector is insufficient
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{Neural Turing Machines} (DeepMind, 2014):
+    \begin{itemize}
+        \item RNN controller + external addressable memory bank
+        \item Reads/writes via \textbf{attention mechanism}
+        \item Differentiable approximation of a Turing machine
+    \end{itemize}
+\end{frame}
+
+% The Paper's Prediction
+\begin{frame}{The Paper's Prediction}
+    \begin{quote}
+        ``We expect systems that use RNNs to understand sentences or whole documents will become much better when they learn strategies for selectively attending to one part at a time.''
+    \end{quote}
+    
+    \vspace{1em}
+    \textbf{Two years later:}
+    
+    \vspace{0.5em}
+    Vaswani et al., \textit{``Attention Is All You Need''} (2017)
+    \begin{itemize}
+        \item Dispenses with recurrence entirely
+        \item Attention alone handles memory and context
+        \item \textbf{The transformer is born}
+    \end{itemize}
+\end{frame}

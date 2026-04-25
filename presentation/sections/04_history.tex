@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION 4: History
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{History}
+
+% The AI Winters
+\begin{frame}{The AI Winters}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{@{}ll@{}}
+            \toprule
+            \textbf{Period} & \textbf{Event} \\ \midrule
+            1950s--60s & Symbolic AI, first wave of optimism \\
+            1970s & \textbf{AI Winter 1} — symbolic approaches hit limits \\
+            1980s & Expert systems — encode human knowledge explicitly \\
+            1990s & \textbf{AI Winter 2} — expert systems too brittle \\
+            1986 & Hinton's backprop paper — \textit{largely ignored} \\
+            1990s & LeCun's CNNs deployed — \textit{largely ignored} \\
+            2000s & SVMs and kernel methods dominate mainstream \\ \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \vspace{1em}
+    Deep learning survived two cycles of hype and abandonment
+    
+    \textbf{The authors lived through both winters, continued regardless}
+\end{frame}
+
+% The 2006 Breakthrough - Problem
+\begin{frame}{The 2006 Breakthrough: The Problem}
+    \textbf{Training deep networks was extremely difficult:}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item No ReLU — stuck with sigmoid/tanh
+        \item Poor weight initialization
+        \item No dropout regularization
+        \item Gradients vanished before reaching early layers
+        \item Limited labeled data
+        \item Limited compute power
+    \end{itemize}
+\end{frame}
+
+% Boltzmann Machines
+\begin{frame}{Boltzmann Machines}
+    % TODO: Add Boltzmann Machine structure diagram
+    % - Visible units (bottom)
+    % - Hidden units (top)
+    % - Connections between layers
+    % - Note: connections are bidirectional/symmetric
+    
+    \begin{center}
+        \textit{[Diagram: Boltzmann Machine structure]}
+    \end{center}
+    
+    \vspace{1em}
+    \textbf{Hinton \& Sejnowski, 1985}
+    \begin{itemize}
+        \item Stochastic recurrent neural network
+        \item Can learn internal representations without labels
+        \item \textbf{Restricted Boltzmann Machines (RBMs):} no intra-layer connections
+    \end{itemize}
+    
+    \vspace{0.5em}
+    Foundation for the 2006 breakthrough
+\end{frame}
+
+% The 2006 Breakthrough - Solution
+\begin{frame}{The 2006 Breakthrough: The Solution}
+    \textbf{Greedy layer-wise pretraining:}
+    
+    \vspace{1em}
+    \begin{enumerate}
+        \item Train each layer independently using \textbf{unlabeled data}
+        \item Use Restricted Boltzmann Machines
+        \item Stack the pretrained layers
+        \item Fine-tune end-to-end with labeled data
+    \end{enumerate}
+    
+    \vspace{1em}
+    \textbf{Why it mattered:}
+    \begin{itemize}
+        \item Proved deep nets could learn features \textbf{without labels}
+        \item Proved pursuing depth was worthwhile at all
+    \end{itemize}
+    
+    \vspace{1em}
+    \begin{quote}
+        \small\textit{Note: the paper attributes this to ``a group at CIFAR.'' Hinton and LeCun were that group.}
+    \end{quote}
+\end{frame}
+
+% First Commercial Payoff
+\begin{frame}{First Commercial Payoff: Speech Recognition}
+    \begin{itemize}
+        \item Adopted by major industry groups \textasciitilde2009
+        \item Deployed in Android phones by 2012
+        \item Compounded by rapidly improving GPU hardware
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{GPUs:} Originally for graphics/gaming
+    \begin{itemize}
+        \item Massively parallel architecture
+        \item Perfect for matrix operations in neural networks
+        \item Training times dropped from weeks to hours
+    \end{itemize}
+    
+    \vspace{1em}
+    Once training innovations arrived, pretraining became unnecessary for large labeled datasets
+\end{frame}

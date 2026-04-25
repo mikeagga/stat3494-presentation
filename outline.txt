@@ -109,6 +109,10 @@ networks. Possible with stochastic gradient decent as long as the activation
 functions are relatively smooth. discovered by multiple groups in the 70's and
 80's. One is Geoffrey Hinton's (author's) group.
 
+Representation learning is a set of methods that allows a machine to be fed with
+raw data and to automatically discover the representations needed for detection
+or classification.
+
 Then I'll start an explanation of back prop through a simple feed forward NN.
 	Relu is normally the fastest, thats what they say.
 	Will write code examples for this and put images in my presentation.

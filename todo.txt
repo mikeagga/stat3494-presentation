@@ -1,0 +1,74 @@
+Get the images of the authors.
+
+Maybe show graph represention of classic representation of svm graph, then
+perhaps show what ai svm graph may look like.
+	Expecting it to be more nuanced. 
+
+What is deep learning? slide before depth justification.
+
+Show the structure of feed forward NN with labels of weights and biases
+
+Show a little math of how the back prop works.
+
+Explain a little more about stochastic grandient decent. Why is it stochastic. A
+little math to get intuition.
+	Explains why activation functions need to be smooth.
+
+Show weight graph representation of weights of feed forward NN, show that it
+doesnt really learn features and its sort of random. Probably should be at the
+end of the section.
+
+Show structure of convolutional NN, with lables
+Explain that the weights the kernels are learned.
+
+Show what the learned kernel looks like
+Show the kernel applied to a sample image from training data.
+	Will show that it learns edges and features and stuff.
+
+Boltzmann Machines structure graph
+
+RNN expanded structure representation
+	Illustrate that the weights are the same across expanded layers
+		This causes the issues
+
+LSTM structure representation.
+
+Explain this also has gradient issues, doesn't remember forever, yet better than
+normal RNN.
+
+Slide about the timing of the paper.
+
+Revise Prediction slides :
+
+Just put the prediction and Ill talk about it during the presentation
+Just grab the important quotes from each section here, summarize the points of
+each one in bullets.
+
+Unsupervised learning91,92,93,94,95,96,97,98 had a catalytic effect in reviving
+interest in deep learning, but has since been overshadowed by the successes of
+purely supervised learning. Although we have not focused on it in this Review,
+we expect unsupervised learning to become far more important in the longer term.
+Human and animal learning is largely unsupervised: we discover the structure of
+the world by observing it, not by being told the name of every object.
+
+Human vision is an active process that sequentially samples the optic array in
+an intelligent, task-specific way using a small, high-resolution fovea with a
+large, low-resolution surround. We expect much of the future progress in vision
+to come from systems that are trained end-to-end and combine ConvNets with RNNs
+that use reinforcement learning to decide where to look. Systems combining deep
+learning and reinforcement learning are in their infancy, but they already
+outperform passive vision systems99 at classification tasks and produce
+impressive results in learning to play many different video games100.
+
+Natural language understanding is another area in which deep learning is poised
+to make a large impact over the next few years. We expect systems that use RNNs
+to understand sentences or whole documents will become much better when they
+learn strategies for selectively attending to one part at a time76,86.
+
+Ultimately, major progress in artificial intelligence will come about through
+systems that combine representation learning with complex reasoning. Although
+deep learning and simple reasoning have been used for speech and handwriting
+recognition for a long time, new paradigms are needed to replace rule-based
+manipulation of symbolic expressions by operations on large vectors101.
+
+Conclusion slide.

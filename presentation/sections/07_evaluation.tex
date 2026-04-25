@@ -1,0 +1,200 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SECTION 7: Evaluation & Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{How the Paper Holds Up}
+
+% Timing of the Paper
+\begin{frame}{The Timing of This Paper}
+    \textbf{2015 — A pivotal moment:}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item 3 years after AlexNet shocked ImageNet (2012)
+        \item Deep learning finally has mainstream attention
+        \item But many researchers still skeptical — remember the winters
+        \item 2 years \textit{before} ``Attention Is All You Need'' (2017)
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{The authors are making a case:}
+    \begin{itemize}
+        \item This is real, this is working, this will continue
+        \item Here's the technical foundation
+        \item Here's where it's going
+    \end{itemize}
+\end{frame}
+
+% Prediction 1: Unsupervised Learning
+\begin{frame}{Prediction: Unsupervised Learning}
+    \begin{quote}
+        ``Unsupervised learning had a catalytic effect in reviving interest in deep learning, but has since been overshadowed by the successes of purely supervised learning. Although we have not focused on it in this Review, we expect unsupervised learning to become far more important in the longer term.''
+    \end{quote}
+    
+    \vspace{0.5em}
+    \begin{quote}
+        ``Human and animal learning is largely unsupervised: we discover the structure of the world by observing it, not by being told the name of every object.''
+    \end{quote}
+    
+    \vspace{1em}
+    \textbf{Key points:}
+    \begin{itemize}
+        \item Supervised learning dominated at the time
+        \item They predict unsupervised will become more important
+        \item Biological motivation: humans learn without labels
+    \end{itemize}
+\end{frame}
+
+% Prediction 2: Vision + RL
+\begin{frame}{Prediction: Vision + Reinforcement Learning}
+    \begin{quote}
+        ``Human vision is an active process that sequentially samples the optic array in an intelligent, task-specific way using a small, high-resolution fovea with a large, low-resolution surround.''
+    \end{quote}
+    
+    \vspace{0.5em}
+    \begin{quote}
+        ``We expect much of the future progress in vision to come from systems that are trained end-to-end and combine ConvNets with RNNs that use reinforcement learning to decide where to look.''
+    \end{quote}
+    
+    \vspace{1em}
+    \textbf{Key points:}
+    \begin{itemize}
+        \item Vision is active, not passive
+        \item CNN + RNN + RL for ``where to look''
+        \item Systems already outperform passive vision at classification
+    \end{itemize}
+\end{frame}
+
+% Prediction 3: NLP + Attention
+\begin{frame}{Prediction: NLP + Attention}
+    \begin{quote}
+        ``Natural language understanding is another area in which deep learning is poised to make a large impact over the next few years.''
+    \end{quote}
+    
+    \vspace{0.5em}
+    \begin{quote}
+        ``We expect systems that use RNNs to understand sentences or whole documents will become much better when they learn strategies for selectively attending to one part at a time.''
+    \end{quote}
+    
+    \vspace{1em}
+    \textbf{Key points:}
+    \begin{itemize}
+        \item NLP will see ``large impact'' in coming years
+        \item Attention is the key missing mechanism
+        \item Selective focus on ``one part at a time''
+    \end{itemize}
+\end{frame}
+
+% Prediction 4: Reasoning
+\begin{frame}{Prediction: Reasoning}
+    \begin{quote}
+        ``Ultimately, major progress in artificial intelligence will come about through systems that combine representation learning with complex reasoning.''
+    \end{quote}
+    
+    \vspace{0.5em}
+    \begin{quote}
+        ``Although deep learning and simple reasoning have been used for speech and handwriting recognition for a long time, new paradigms are needed to replace rule-based manipulation of symbolic expressions by operations on large vectors.''
+    \end{quote}
+    
+    \vspace{1em}
+    \textbf{Key points:}
+    \begin{itemize}
+        \item Deep learning alone is not enough
+        \item Must combine with ``complex reasoning''
+        \item New paradigms needed — not just scaling
+    \end{itemize}
+\end{frame}
+
+% The Scorecard
+\begin{frame}{The Scorecard}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{@{}p{5.5cm}c@{}}
+            \toprule
+            \textbf{Prediction (2015)} & \textbf{Outcome} \\ \midrule
+            Unsupervised learning will dominate & \checkmark (GPT, BERT) \\
+            Attention is the key mechanism & \checkmark\checkmark (Transformers) \\
+            CNN + RNN + RL for active vision & \checkmark (DeepMind) \\
+            Need representation + reasoning & Open problem \\ \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Near-term predictions: vindicated within 2--5 years
+        \item The one unsolved problem they identified remains central
+    \end{itemize}
+\end{frame}
+
+% The Philosophical Frame
+\begin{frame}{The Philosophical Frame}
+    \textbf{A distinction from cognitive science:}
+    
+    \vspace{1em}
+    \textbf{Fast inference:}
+    \begin{itemize}
+        \item Automatic, pattern-based, intuitive
+        \item Recognizing a face, understanding speech
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textbf{Deliberate reasoning:}
+    \begin{itemize}
+        \item Slow, logical, symbolic
+        \item Multi-step proofs, causal inference
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{Deep learning models the former} — and does so better than anything prior
+    
+    \vspace{0.5em}
+    The authors understood clearly what deep learning was \textit{and what it was not}
+\end{frame}
+
+% Conclusion
+\begin{frame}{Conclusion}
+    \textbf{What makes this paper special:}
+    
+    \vspace{1em}
+    \begin{itemize}
+        \item Not just a survey — a \textbf{persuasion document}
+        \item Written by the people who \textbf{built the field}
+        \item Every claim backed by work they personally did
+        \item Published at the right moment — deep learning proven but not yet dominant
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{The result:}
+    \begin{itemize}
+        \item \textasciitilde70,000 citations
+        \item Every near-term prediction came true
+        \item The open question they identified remains open
+    \end{itemize}
+\end{frame}
+
+% Closing
+\begin{frame}{Closing}
+    \begin{itemize}
+        \item Three researchers
+        \item Thirty years of work dismissed twice by the mainstream
+        \item One paper in \textit{Nature}, 2015
+    \end{itemize}
+    
+    \vspace{1em}
+    \textbf{The world they described is the one we are living in.}
+\end{frame}
+
+% Thank You
+\begin{frame}{Questions?}
+    \vspace{2em}
+    \begin{center}
+        \Large
+        Thank you
+    \end{center}
+    
+    \vspace{2em}
+    \textbf{Reference:}
+    \begin{itemize}
+        \item LeCun, Bengio, Hinton. ``Deep Learning.'' \textit{Nature} 521, 2015.
+    \end{itemize}
+\end{frame}
