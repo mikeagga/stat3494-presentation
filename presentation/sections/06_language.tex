@@ -41,7 +41,7 @@
     \vspace{1em}
     % TODO: Add embedding space visualization
     
-    \textbf{This structure was not programmed — it emerged:}
+    \textbf{This structure was not programmed; it emerged:}
     \begin{quote}
         \small``When trained to predict the next word in a news story, the learned word vectors for Tuesday and Wednesday are very similar, as are the word vectors for Sweden and Norway.''
     \end{quote}
@@ -71,7 +71,7 @@
 \begin{frame}{Recurrent Neural Networks: The Problem}
     \textbf{Feedforward networks for language:}
     \begin{itemize}
-        \item Stateless — each input processed independently
+        \item Stateless: each input processed independently
         \item No memory of prior context
         \item Cannot model sequence, grammar, long-range dependencies
     \end{itemize}
@@ -85,18 +85,11 @@
 
 % RNN Structure
 \begin{frame}{RNN: Unrolled Structure}
-    % TODO: Add RNN unrolled diagram showing:
-    % - Input sequence x₁, x₂, x₃, ...
-    % - Hidden states h₁, h₂, h₃, ...
-    % - Outputs y₁, y₂, y₃, ...
-    % - Arrows showing h_{t-1} → h_t connections
-    % - IMPORTANT: Label that weights W_hh, W_xh, W_hy are SHARED across all time steps
-    
     \begin{center}
-        \textit{[Diagram: RNN unrolled through time]}
+        \includegraphics[width=0.85\textwidth]{figures/rnn_unrolled.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Key insight:} The \textbf{same weights} are used at every time step
     $$h_t = \sigma(W_{hh} h_{t-1} + W_{xh} x_t + b)$$
     
@@ -150,22 +143,14 @@
 \begin{frame}{LSTM: Structure}
     \textbf{Hochreiter \& Schmidhuber, 1997}
     
-    % TODO: Add LSTM cell diagram showing:
-    % - Cell state C_t (the "conveyor belt" running through)
-    % - Forget gate f_t
-    % - Input gate i_t  
-    % - Output gate o_t
-    % - Candidate values C̃_t
-    % - How gates control information flow
-    
     \begin{center}
-        \textit{[Diagram: LSTM cell with gates labeled]}
+        \includegraphics[width=0.8\textwidth]{figures/lstm.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Key innovation:} Separate \textbf{cell state} $C_t$ from hidden state $h_t$
     
-    Cell state flows through with minimal transformation — gradients preserved
+    Cell state flows through with minimal transformation, preserving gradients
 \end{frame}
 
 % LSTM Gates
@@ -187,7 +172,7 @@
 
 % LSTM Limitations
 \begin{frame}{LSTM: Better, But Not Perfect}
-    \textbf{LSTM solves vanishing gradients — mostly}
+    \textbf{LSTM solves vanishing gradients (mostly)}
     
     \vspace{1em}
     \begin{itemize}
@@ -198,9 +183,9 @@
     \vspace{1em}
     \textbf{But still has limitations:}
     \begin{itemize}
-        \item Doesn't remember forever — gradients still decay, just slower
-        \item Sequential processing — can't parallelize across time steps
-        \item Fixed-size hidden state — information bottleneck
+        \item Doesn't remember forever: gradients still decay, just slower
+        \item Sequential processing: can't parallelize across time steps
+        \item Fixed-size hidden state: information bottleneck
     \end{itemize}
     
     \vspace{1em}

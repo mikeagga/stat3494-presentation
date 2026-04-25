@@ -12,11 +12,11 @@
             \toprule
             \textbf{Period} & \textbf{Event} \\ \midrule
             1950s--60s & Symbolic AI, first wave of optimism \\
-            1970s & \textbf{AI Winter 1} — symbolic approaches hit limits \\
-            1980s & Expert systems — encode human knowledge explicitly \\
-            1990s & \textbf{AI Winter 2} — expert systems too brittle \\
-            1986 & Hinton's backprop paper — \textit{largely ignored} \\
-            1990s & LeCun's CNNs deployed — \textit{largely ignored} \\
+            1970s & \textbf{AI Winter 1}: symbolic approaches hit limits \\
+            1980s & Expert systems: encode human knowledge explicitly \\
+            1990s & \textbf{AI Winter 2}: expert systems too brittle \\
+            1986 & Hinton's backprop paper (\textit{largely ignored}) \\
+            1990s & LeCun's CNNs deployed (\textit{largely ignored}) \\
             2000s & SVMs and kernel methods dominate mainstream \\ \bottomrule
         \end{tabular}
     \end{table}
@@ -33,7 +33,7 @@
     
     \vspace{1em}
     \begin{itemize}
-        \item No ReLU — stuck with sigmoid/tanh
+        \item No ReLU, stuck with sigmoid/tanh
         \item Poor weight initialization
         \item No dropout regularization
         \item Gradients vanished before reaching early layers
@@ -44,17 +44,11 @@
 
 % Boltzmann Machines
 \begin{frame}{Boltzmann Machines}
-    % TODO: Add Boltzmann Machine structure diagram
-    % - Visible units (bottom)
-    % - Hidden units (top)
-    % - Connections between layers
-    % - Note: connections are bidirectional/symmetric
-    
     \begin{center}
-        \textit{[Diagram: Boltzmann Machine structure]}
+        \includegraphics[width=0.45\textwidth]{figures/boltzmann_machine.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Hinton \& Sejnowski, 1985}
     \begin{itemize}
         \item Stochastic recurrent neural network

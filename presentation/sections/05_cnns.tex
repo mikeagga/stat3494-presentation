@@ -11,7 +11,7 @@
     \begin{itemize}
         \item A 256×256 RGB image = \textbf{\textasciitilde200,000 inputs}
         \item Fully connected to 1000 neurons = 200 million parameters in layer 1 alone
-        \item No spatial awareness — pixel (0,0) and pixel (255,255) treated the same
+        \item No spatial awareness: pixel (0,0) and pixel (255,255) treated the same
         \item Small shifts break everything
     \end{itemize}
     
@@ -21,20 +21,11 @@
 
 % CNN Structure
 \begin{frame}{CNN Structure}
-    % TODO: Add labeled CNN architecture diagram showing:
-    % - Input image
-    % - Convolutional layers (with filter sliding)
-    % - Feature maps
-    % - Pooling layers
-    % - Fully connected layers at end
-    % - Output
-    % Label: kernels/filters, stride, feature maps, pooling windows
-    
     \begin{center}
-        \textit{[Diagram: CNN architecture with labeled components]}
+        \includegraphics[width=0.95\textwidth]{figures/cnn_architecture.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Key components:}
     \begin{itemize}
         \item \textbf{Convolutional layers:} learnable filters/kernels
@@ -72,15 +63,11 @@
 
 % Learned Kernels
 \begin{frame}{What Do Learned Kernels Look Like?}
-    % TODO: Add visualization of learned kernels from first layer of CNN
-    % Show grid of small filter visualizations (e.g., from AlexNet layer 1)
-    % Should show edge detectors, color blobs, etc.
-    
     \begin{center}
-        \textit{[Visualization: learned kernels from CNN layer 1]}
+        \includegraphics[width=0.7\textwidth]{figures/cnn_kernels.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{First layer kernels typically learn:}
     \begin{itemize}
         \item Edge detectors (horizontal, vertical, diagonal)
@@ -89,26 +76,19 @@
     \end{itemize}
     
     \vspace{0.5em}
-    \textit{These emerge from training — not hand-designed}
+    \textit{These emerge from training, not hand-designed}
 \end{frame}
 
 % Kernel Applied to Image
 \begin{frame}{Kernels Applied to Images}
-    % TODO: Add visualization showing:
-    % - Original input image
-    % - Several learned kernels
-    % - The resulting feature maps (activations) when kernels are applied
-    % Show that edge detector kernel produces edge-highlighted output, etc.
-    
     \begin{center}
-        \textit{[Visualization: kernel convolution on sample image → feature maps]}
+        \includegraphics[width=0.95\textwidth]{figures/cnn_kernel_application.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Each kernel produces a feature map:}
     \begin{itemize}
-        \item Edge kernel → highlights edges in image
-        \item Color kernel → highlights color regions
+        \item Edge kernel $\rightarrow$ highlights edges in image
         \item Stacking layers builds more complex features
     \end{itemize}
 \end{frame}
@@ -119,9 +99,9 @@
     
     \textbf{Layer 2:} Corners, textures, simple shapes
     
-    \textbf{Layer 3:} Parts — eyes, wheels, windows
+    \textbf{Layer 3:} Parts (eyes, wheels, windows)
     
-    \textbf{Layer 4+:} Objects — faces, cars, buildings
+    \textbf{Layer 4+:} Objects (faces, cars, buildings)
     
     \vspace{1em}
     \begin{center}
@@ -129,7 +109,7 @@
     \end{center}
     
     \vspace{1em}
-    \textbf{This structure emerges from training — not programmed}
+    \textbf{This structure emerges from training, not programmed}
 \end{frame}
 
 % The Biological Parallel
@@ -141,7 +121,7 @@
     \vspace{1em}
     \begin{itemize}
         \item CNNs mirror the hierarchical structure of biological vision
-        \item Not designed to — emerged from learning
+        \item Not designed to; emerged from learning
         \item The visual cortex processes: edges → shapes → objects
     \end{itemize}
 \end{frame}
@@ -173,7 +153,7 @@
     \vspace{1em}
     \begin{itemize}
         \item Top-5 error: \textbf{15.3\%} vs runner-up's \textbf{26.2\%}
-        \item Not incremental — almost halved the error rate
+        \item Not incremental: almost halved the error rate
     \end{itemize}
     
     \vspace{1em}
@@ -199,10 +179,10 @@
     \textbf{What happened:}
     \begin{itemize}
         \item Tesla Autopilot launched October 2015
-        \item NVIDIA pivoted to AI — stock up \textasciitilde20,000\% since 2015
+        \item NVIDIA pivoted to AI (stock up \textasciitilde20,000\% since 2015)
         \item Every major tech company adopted deep learning
     \end{itemize}
     
     \vspace{1em}
-    \textit{The hype was warranted — they knew it would work}
+    \textit{The hype was warranted. They knew it would work.}
 \end{frame}

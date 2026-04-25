@@ -5,18 +5,11 @@
 
 % Feedforward Neural Network Structure
 \begin{frame}{Feedforward Neural Network Structure}
-    % TODO: Add diagram of feedforward NN with labels:
-    % - Input layer (x₁, x₂, ..., xₙ)
-    % - Hidden layers with neurons
-    % - Weights (wᵢⱼ) on connections
-    % - Biases (bⱼ) at each neuron
-    % - Output layer
-    
     \begin{center}
-        \textit{[Feedforward NN diagram with labeled weights $w_{ij}$ and biases $b_j$]}
+        \includegraphics[width=0.85\textwidth]{figures/feedforward_nn_diagram.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Each neuron computes:}
     $$z_j = \sum_i w_{ij} x_i + b_j \quad \text{then} \quad a_j = \sigma(z_j)$$
     
@@ -64,7 +57,7 @@
     \vspace{1em}
     \textbf{Batch gradient descent:}
     $$w \leftarrow w - \eta \frac{1}{N} \sum_{i=1}^{N} \nabla_w L_i$$
-    Compute gradient over \textit{all} $N$ training examples — slow!
+    Compute gradient over \textit{all} $N$ training examples. Slow!
     
     \vspace{1em}
     \textbf{Stochastic gradient descent:}
@@ -91,33 +84,19 @@
     \textbf{Sigmoid / Tanh:}
     \begin{itemize}
         \item Smooth, differentiable
-        \item Problem: cause \textbf{vanishing gradients} — $\sigma'(z) \to 0$ for large $|z|$
+        \item Problem: cause \textbf{vanishing gradients} ($\sigma'(z) \to 0$ for large $|z|$)
     \end{itemize}
     
     \vspace{0.5em}
     \textbf{ReLU} $(\max(0, x))$:
     \begin{itemize}
         \item Simple, fast to compute
-        \item Gradient is 1 for $x > 0$ — no vanishing
+        \item Gradient is 1 for $x > 0$, so no vanishing
         \item The paper's recommended default
     \end{itemize}
-    
-    % TODO: Add activation function plots (sigmoid, tanh, ReLU)
 \end{frame}
 
 % Code Example Placeholder
-\begin{frame}[fragile]{Backpropagation: Code Example}
-    % TODO: Add simple neural network code example
-    % - Define a 2-layer network
-    % - Forward pass
-    % - Loss computation  
-    % - Backward pass (manual gradients)
-    % - Weight update
-    
-    \begin{center}
-        \textit{[Code: simple 2-layer network with ReLU, forward/backward pass]}
-    \end{center}
-\end{frame}
 
 % The 1990s Objection
 \begin{frame}{The 1990s Objection}
@@ -135,20 +114,16 @@
     \end{quote}
     
     \vspace{0.5em}
-    \textbf{Saddle points are not local minima} — there is always a descent direction
+    \textbf{Saddle points are not local minima}: there is always a descent direction
 \end{frame}
 
 % Feedforward NN Weights Visualization
 \begin{frame}{What Do Feedforward Networks Learn?}
-    % TODO: Add visualization of learned weights from a simple feedforward NN
-    % trained on images - show that weights look somewhat random/unstructured
-    % compared to CNN filters
-    
     \begin{center}
-        \textit{[Visualization: weight matrices from feedforward NN on images]}
+        \includegraphics[width=0.7\textwidth]{figures/mnist_weights.png}
     \end{center}
     
-    \vspace{1em}
+    \vspace{0.5em}
     \textbf{Observation:} Weights appear relatively unstructured
     \begin{itemize}
         \item No clear feature detectors
