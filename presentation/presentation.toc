@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{The Problem}{7}{0}{2}
-\beamer@sectionintoc {3}{Backpropagation}{13}{0}{3}
-\beamer@sectionintoc {4}{History}{20}{0}{4}
-\beamer@sectionintoc {5}{Convolutional Neural Networks}{25}{0}{5}
-\beamer@sectionintoc {6}{Language Processing}{35}{0}{6}
-\beamer@sectionintoc {7}{How the Paper Holds Up}{47}{0}{7}
